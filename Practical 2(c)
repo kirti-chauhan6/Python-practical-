@@ -1,0 +1,6 @@
+n, primes, num = int(input("Enter n: ")), [], 2
+while len(primes) < n:
+    if num > 1 and all(num % i for i in range(2, int(num**0.5)+1)):
+        primes.append(num)
+    num += 1
+print(primes)
