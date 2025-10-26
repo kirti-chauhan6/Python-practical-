@@ -1,0 +1,20 @@
+ch = input("Enter a character: ")
+
+if ch.isalpha():
+    if ch.lower() in ['a', 'e', 'i', 'o', 'u']:
+        print(f"{ch} is a vowel.")
+    else:
+        print(f"{ch} is a consonant.")
+else:
+    print(f"{ch} is not an alphabet, so cannot check vowel/consonant.")
+
+if ch.isupper():
+    print("It is an uppercase letter.")
+elif ch.islower():
+    print("It is a lowercase letter.")
+elif ch.isdigit():
+    print("It is a digit.")
+else:
+    print("It is a special character.")
+
+print(f"ASCII value of {ch} is {ord(ch)}")
