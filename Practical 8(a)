@@ -1,0 +1,8 @@
+data = eval(input("Enter a list: "))
+
+cubes = []
+for x in data:
+    if isinstance(x, int) and x % 2 == 0:  
+        cubes.append(x ** 3)
+
+print("Output =", cubes)
