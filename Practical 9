@@ -1,0 +1,68 @@
+def file_summary(filename):
+    try:
+        with open(filename, "r") as f:
+            text = f.read()
+            num_characters = len(text)
+            num_words = len(text.split())
+            f.seek(0)
+            num_lines = len(f.readlines())
+        print(f"Total characters: {num_characters}")
+        print(f"Total words: {num_words}")
+        print(f"Total lines: {num_lines}")
+    except FileNotFoundError:
+        print("Error: File not found!")
+
+filename = "sample.txt"
+file_summary(filename)
+
+
+*9(b)*
+def char_frequency(filename):
+    try:
+        with open(filename, "r") as f:
+            text = f.read()
+            freq = {}
+            for ch in text:
+                freq[ch] = freq.get(ch, 0) + 1
+        for k, v in freq.items():
+            print(f"{k}: {v}")
+    except FileNotFoundError:
+        print("Error: File not found!")
+
+filename = "sample.txt"
+char_frequency(filename)
+
+
+9(c)
+def reverse_words(filename):
+    try:
+        with open(filename, "r") as f:
+            text = f.read()
+            words = text.split()
+            reversed_words = words[::-1]
+            print(" ".join(reversed_words))
+    except FileNotFoundError:
+        print("Error: File not found!")
+
+filename = "sample.txt"
+reverse_words(filename)
+
+9(d)
+
+def split_lines(filename):
+    try:
+        with open(filename, "r") as f:
+            lines = f.readlines()
+        with open("File1.txt", "w") as f1, open("File2.txt", "w") as f2:
+            for i, line in enumerate(lines, start=1):
+                if i % 2 == 0:
+                    f1.write(line)
+                else:
+                    f2.write(line)
+        print("Odd lines written to File2.txt")
+        print("Even lines written to File1.txt")
+    except FileNotFoundError:
+        print("Error: File not found!")
+
+filename = "sample.txt"
+split_lines(filename)
