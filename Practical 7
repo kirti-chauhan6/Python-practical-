@@ -1,0 +1,21 @@
+def find_occurrences(str1, str2):
+    indices = []
+    start = 0
+    
+    while True:
+        idx = str1.find(str2, start)
+        if idx == -1:
+            break
+        indices.append(idx)
+        start = idx + 1
+    
+    if indices:
+        return indices
+    else:
+        return -1
+
+s1 = input("Enter String 1: ")
+s2 = input("Enter String 2: ")
+
+result = find_occurrences(s1, s2)
+print("Indices:", result)
