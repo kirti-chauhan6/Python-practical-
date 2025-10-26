@@ -1,0 +1,14 @@
+def swap_first_n_chars(str1, str2, n):
+    new_str1 = str2[:n] + str1[n:]
+    new_str2 = str1[:n] + str2[n:]
+    return new_str1, new_str2
+
+s1 = input("Enter first string: ")
+s2 = input("Enter second string: ")
+n = int(input("Enter n: "))
+
+result1, result2 = swap_first_n_chars(s1, s2, n)
+
+print("Output:")
+print(result1)
+print(result2)
