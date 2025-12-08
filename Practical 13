@@ -1,0 +1,17 @@
+def is_valid_name(name):
+    # Name should not contain digits or special characters
+    for ch in name:
+        if not (ch.isalpha() or ch.isspace()):
+            return False
+    return True
+
+try:
+    name = input("Enter your name: ")
+
+    if not is_valid_name(name):
+        raise ValueError("Name must not contain digits or special characters!")
+
+    print("Valid name entered:", name)
+
+except ValueError as e:
+    print("Error:", e)
